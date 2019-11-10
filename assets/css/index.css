@@ -4,6 +4,7 @@ body {
   color: #222;
   margin: 0;
 }
+
 .title {
   padding: 30px;
 }
@@ -119,4 +120,5 @@ h3 {
   width: 100%;
   text-align: center;
   display: block;
+  font-size: 20px;
 }
