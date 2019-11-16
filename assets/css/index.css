@@ -2,9 +2,11 @@
   --global-color-primary: #FF7168;
   --global-color-secondary: #F1FF82;
   --global-color-tertiary: #3F85CC;
+  --global-color-accent: #B34037;
   --global-text-color: #444455;
   --title-text-font-family: 'Open Sans', sans-serif;
   --base-text-font-family: 'Bree Serif', sans-serif;
+  --global-focus-outline: 6px solid var(--global-color-accent)
 }
 
 body {
@@ -16,6 +18,10 @@ body {
 
 a {
   color: var(--global-color-secondary);
+}
+
+a:focus {
+  outline: var(--global-focus-outline);
 }
 
 .feather {
@@ -39,14 +45,34 @@ h1 {
 h2 {
   font-size: 32px;
   margin: 0px;
+  font-family: var(--title-text-font-family);
   font-weight: 800;
 }
 
-p {}
-
-.h2.subtitle {
+h2.subtitle {
   font-family: var(--base-text-font-family);
   font-weight: 400;
+}
+
+h4 {
+  margin: 0;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  filter: brightness(90%);
+}
+
+.clickable:focus {
+  outline: var(--global-focus-outline);
+}
+
+.clickable:active {
+  box-shadow: none;
+  transform: translateY(6px);
 }
 
 .main-bg {
@@ -75,15 +101,11 @@ p {}
   box-shadow: 0 6px var(--global-color-secondary);
 }
 
-.grid-item.main {
-  /* background-color: #4076AD; */
-}
-
 .item-title {
   width: 100%;
   text-align: center;
   display: block;
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .grid-item .description {
@@ -135,13 +157,13 @@ p {}
 
 .footer {
   grid-column-start: 2;
-  grid-column-end: span 1;
+  grid-column-end: span 2;
   grid-row-start: 6;
   grid-row-end: span 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  /* color: #fff; */
+  width: 65%;
 }
 
 .test {
@@ -158,11 +180,13 @@ p {}
   grid-row-end: span 2;
 }
 
-.color-editor {
+.color-playground {
   grid-column-start: 2;
   grid-column-end: span 1;
   grid-row-start: 3;
   grid-row-end: span 1;
+  background-color: var(--global-color-secondary);
+  box-shadow: 0 6px 0 var(--global-color-primary);
 }
 
 .css {
